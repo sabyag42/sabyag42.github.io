@@ -1,0 +1,227 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sabyasachi Ghosh</title>
+<style>
+body {
+    color: #000000;
+    background: #EEEEEE;
+    font: 1.1em "Times New Roman";
+    line-height: 1.2;
+    margin: 40px 0;
+}
+#resume {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px 60px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 4px #AAAAAA;
+    -webkit-box-shadow: 2px 2px 4px #AAAAAA;
+}
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 200%;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    border-bottom: 1px solid #000000;
+    text-transform: uppercase;
+    font-size: 130%;
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+h3 {
+    font-size: 100%;
+    margin: 0.8em 0 0.3em 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+p {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    }
+ul {
+    padding: 0;
+    margin: 0 1.5em;
+    }
+/* ul immediately after h1 = contact list */
+h1 + ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    }
+h1 + ul > li {
+    display: inline;
+    white-space: pre;
+    list-style-type: none;
+}
+h1 + ul > li:after {
+    content: "  \2022  ";
+}
+h1 + ul > li:last-child:after {
+    content: "";
+}
+/* p immediately after contact list = summary */
+h1 + ul + p {
+    margin: 1em 0;
+}
+@media print {
+    body {
+        font-size: 10pt;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+    #resume {
+        margin: 0;
+        padding: 0;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    /* Do not underline abbr tags in PDF */
+    abbr {
+        text-decoration: none;
+        font-variant: none;
+    }
+    /* Make links black in PDF */
+    /* Move this outside the print block to apply this in HTML too */
+    a, a:link, a:visited, a:hover {
+        color: #000000;
+        text-decoration: underline;
+    }
+}
+@page {
+    /* Change margins and paper size of PDF */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@page */
+    size: letter;
+    margin: 0.5in 0.8in;
+}
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 16pt;
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF !important;
+    }
+    #resume {
+        margin: 0;
+        padding: 1em;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+}
+
+</style>
+</head>
+<body>
+<div id="resume">
+<h1>Sabyasachi Ghosh</h1>
+<p>sabyaqa@gmail.com · +91-9650528253 · linkedin.com/in/sabyasachi-genai · github.com/sabyag42 · Greater Noida, India</p>
+<h2>Summary</h2>
+<p>AI Systems Quality Engineer / Senior SDET with 11 years of experience specialising in LLM evaluation, RAG pipeline validation, hallucination detection, adversarial prompt injection testing, and agentic AI quality assurance for production GenAI systems. Hands-on expertise in RAGAS, G-Eval, LLM-as-judge scoring, FAISS vector retrieval evaluation, LangSmith/Langfuse observability, and guardrails validation — applied to real AI systems in production, not theoretical frameworks. Reduced manual test authoring effort by 58% by shipping an autonomous agentic test generation pipeline integrating RAG, GPT-4o, and pytest into CI/CD at Vonage. Proven track record embedding measurable AI quality signals — faithfulness scores, hallucination rates, retrieval hit rates — into release pipelines to reduce AI defect escape rates and improve production reliability.</p>
+<h2>Work Experience</h2>
+<h3>Senior QA Engineer / Gen AI QA Lead — Vonage (Ericsson Group)</h3>
+<p><strong>Aug 2022 – Present</strong></p>
+<ul>
+<li><strong>RAG pipeline validation</strong>: designed and operated end-to-end RAG evaluation pipelines using RAGAS and G-Eval — measuring faithfulness scores of 0.86, context relevancy of 0.79, and answer correctness of 0.77 across 200+ test scenarios; reduced RAG defect escape rate by 37% before production deployment.</li>
+<li>18.3% of LLM outputs flagged per release cycle for faithfulness violations — caught using LLM-as-judge scoring and RAGAS groundedness metrics integrated directly into CI/CD; eliminated hallucination-related production incidents across 3 consecutive releases.</li>
+<li>After production hallucination incidents exposed gaps in retrieval quality, validated FAISS-based pipelines for hit rate, MRR, and context precision — achieving retrieval hit rate of 0.89 and MRR of 0.83 across 500+ test queries before downstream LLM consumption.</li>
+<li>14 critical prompt injection vulnerabilities identified across LLM-driven workflows before production deployment — discovered through a structured adversarial suite of 117 prompt patterns targeting guardrails, input sanitisation, and model robustness.</li>
+<li>Using LangSmith and Langfuse, instrumented LLM pipelines to monitor token usage, latency, and chain execution traces across 3,200+ runs per sprint; mean time to detect LLM regressions dropped from 3 days to under 5 hours.</li>
+<li>Shipped autonomous AI agent fetching 40+ Jira stories per sprint → RAG retrieval via FAISS → 200+ GPT-4o-generated pytest cases executed in CI — cut manual test authoring effort by 58%, with 86.4% first-pass execution success rate.</li>
+<li><strong>Python/pytest framework at scale</strong>: production-grade pytest frameworks across UI, REST API, integration, and regression layers — 27 microservices on AWS EKS, 83.6% automation coverage on critical paths.</li>
+<li>Flaky test rate fell from 23.5% to 3.8% after enforcing Python-based quality gates, coverage thresholds, and static analysis across 60+ GitHub Actions and Jenkins pipeline jobs.</li>
+<li>Built Prometheus, Grafana, and Splunk observability stack tracking 12 quality KPIs across 27 services — reduced mean time to detect production regressions by 53%.</li>
+<li>Cross-browser Playwright framework covering 83 end-to-end UI flows across 15 authenticated user journeys; maintained alongside Python/pytest stack with zero framework coupling.</li>
+<li>Validated Kafka event integrity, DynamoDB, MongoDB, and Redis integrations across 31 event-driven workflows — caught 9 data consistency defects missed by unit tests.</li>
+<li>Mentored 6 QA engineers on Python automation, LLM evaluation practices, and test pyramid thinking; 3 progressed to senior roles within 18 months.</li>
+</ul>
+<h3>Lead Software QA Engineer — UKG (Ultimate Kronos Group)</h3>
+<p><strong>Dec 2021 – Aug 2022</strong></p>
+<ul>
+<li>Led QA across 4 Agile squads — owning requirements analysis, test case design, quality reporting, and CI/CD quality gates for a global enterprise SaaS platform serving 5,000+ enterprise clients.</li>
+<li>Drove test coverage from 46% to 74% across 15 services by rebuilding the Selenium and Python automation framework and retiring 340+ duplicate test cases.</li>
+<li>Core stack: Python, Selenium, RestAssured, Jenkins, Cucumber BDD.</li>
+</ul>
+<h3>Senior Software QA Engineer — UKG (Ultimate Kronos Group)</h3>
+<p><strong>Sep 2019 – Nov 2021</strong></p>
+<ul>
+<li>Architected automation frameworks for a global enterprise SaaS platform — Selenium, RestAssured, Jenkins CI/CD, Cucumber BDD — covering 1,200+ regression test cases across 20 microservices.</li>
+<li>Applied test pyramid approach to balance unit, integration, and end-to-end coverage; drove 34% reduction in regression cycle time over 18 months.</li>
+<li>Applied JMeter for load and performance testing at 1,000+ concurrent users; validated SQL data integrity across relational databases.</li>
+</ul>
+<h3>QA Automation Engineer (Team Lead) — American Express via Tata Consultancy Services</h3>
+<p><strong>Oct 2018 – Sep 2019</strong></p>
+<ul>
+<li>Built automation frameworks from scratch for a high-availability FinTech platform — covering API, integration, and regression layers with complex financial integrations across 10 services.</li>
+<li>Designed a custom AI-assisted test framework for chatbot and AI workflow testing recognised by engineering leadership for technical excellence — automated approximately 150 regression test cases across conversational AI flows, reducing pre-release QA effort for a team of 6 QA engineers by [ADD-%].</li>
+</ul>
+<h3>SDET (Onsite UK) — DXC Technology</h3>
+<p><strong>Nov 2014 – Oct 2018</strong></p>
+<ul>
+<li>Embedded onsite across 3 UK enterprise clients over 4 years — led framework modernisation for a combined estate of 8 cross-functional Agile delivery teams, migrating legacy manual test suites to Selenium/Java/TestNG automation covering 600+ regression scenarios.</li>
+<li>Built and maintained Jenkins-based CI pipelines integrated with JIRA and Confluence for test reporting — reduced manual regression effort by 41% across 2 major client programmes; introduced BDD with Cucumber and Gherkin as a shared language between QA and business analysts.</li>
+<li>Set QA standards, onboarded new team members to automated testing practices, and acted as the primary QA contact during go-live phases for 4 production releases — zero P1 defects escaped post-deployment across all 4 releases.</li>
+</ul>
+<h2>Projects</h2>
+<h3>ai-qa-demo — Autonomous Test Generation with RAG + Agentic AI</h3>
+<p><em>(Private repository — available on request)</em></p>
+<p><strong>Problem:</strong> Manual test case authoring from Jira stories consumed 8+ hours per sprint, creating coverage gaps and slowing release velocity.
+<strong>Solution:</strong> Built an autonomous agentic pipeline — FAISS-backed RAG retrieves relevant test context from documentation → GPT-4o generates pytest test cases via structured prompt engineering → CI/CD executes and reports to AWS S3/SNS.
+<strong>Outcome:</strong> Generated 200+ test cases automatically per sprint, reduced manual authoring effort by 58%, achieved 86.4% first-pass execution success rate. LangSmith traces monitored for prompt quality and token efficiency across 3,200+ runs.
+<strong>Stack:</strong> Python, LangChain, FAISS, RAG, GPT-4o, LangSmith, pytest, AWS (S3, SNS, EKS), GitHub Actions.</p>
+<h3>llm-eval-framework — Production LLM Quality Evaluation</h3>
+<p><em>(Private repository — available on request)</em></p>
+<p><strong>Problem:</strong> No systematic way to catch hallucinations, faithfulness failures, or retrieval degradation in RAG-powered features before they reached production users.
+<strong>Solution:</strong> Built evaluation framework covering RAGAS-based RAG evaluation (faithfulness, context relevancy, answer correctness), G-Eval, LLM-as-judge scoring, hallucination detection, and prompt injection regression suites — all integrated as CI gates.
+<strong>Outcome:</strong> Detected 91.3% of LLM quality regressions pre-production across 5 evaluation dimensions; established baseline faithfulness score of 0.86 and flagged deviations automatically. Langfuse traces provided full auditability across all evaluation runs.
+<strong>Stack:</strong> Python, RAGAS, G-Eval, FAISS, LangSmith, Langfuse, pytest, GitHub Actions.</p>
+<h3>playwright-shopdemo — Scalable E2E Automation Reference Framework</h3>
+<p><strong>Problem:</strong> Teams lacked a maintainable, cross-browser Playwright framework pattern for authenticated SaaS user journeys.
+<strong>Solution:</strong> Built production-grade TypeScript/Playwright framework — POM, fixtures, storageState for session management, cross-browser matrix, Allure reporting, GitHub Actions CI/CD.
+<strong>Outcome:</strong> Reduced test setup time by 63%; framework adopted as reference implementation across teams.
+<a href="https://github.com/sabyag42/playwright-shopdemo">github.com/sabyag42/playwright-shopdemo</a></p>
+<h3>ai-test-framework-k8s — Cloud-Native AI Test Platform</h3>
+<p><a href="https://github.com/sabyag42/ai-test-framework-k8s">github.com/sabyag42/ai-test-framework-k8s</a></p>
+<p><strong>Problem:</strong> AI test services needed production-grade deployment with auto-scaling for parallel execution workloads.
+<strong>Solution:</strong> FastAPI + GPT-4o test platform deployed on Kubernetes with Helm charts, HPA autoscaling, Docker containerisation, GitHub Actions CI/CD.
+<strong>Outcome:</strong> Achieved 67% reduction in test execution time through horizontal pod autoscaling under peak load.</p>
+<h3>langchain-mastery / crewai-research-crew / mcp-mastery</h3>
+<p><a href="https://github.com/sabyag42/crewai-research-crew">github.com/sabyag42/crewai-research-crew</a> <em>(langchain-mastery and mcp-mastery: private — available on request)</em></p>
+<p><strong>Problem:</strong> No reusable agent orchestration patterns for QA-specific agentic workflows.
+<strong>Solution:</strong> 14-module LangChain + LangGraph monorepo covering agent evaluation, FAISS RAG pipelines, multi-agent CrewAI sequential pipeline (Researcher → Analyst → Writer), and FastMCP server with tool interfaces and LangSmith observability.
+<strong>Outcome:</strong> Published reference implementations used for onboarding engineers to agentic QA patterns.</p>
+<h2>Skills</h2>
+<ul>
+<li><strong>LLM Evaluation:</strong> RAGAS, G-Eval, DeepEval, LLM-as-judge scoring, hallucination detection, faithfulness scoring, context relevancy, answer correctness, prompt regression testing</li>
+<li><strong>RAG &amp; Vector Search:</strong> FAISS, RAG pipeline validation, retrieval hit rate, MRR evaluation, embeddings quality assessment, context precision testing</li>
+<li><strong>Adversarial &amp; Safety Testing:</strong> Prompt injection testing, adversarial prompt suites, guardrails validation, red-teaming, input sanitisation testing</li>
+<li><strong>LLM Observability:</strong> LangSmith, Langfuse, token usage monitoring, chain execution tracing, LLM run analytics, model drift detection</li>
+<li><strong>Agentic AI:</strong> LangChain, LangGraph, CrewAI, FastMCP, GPT-4o, AWS Bedrock, multi-agent orchestration, agentic workflow validation</li>
+<li><strong>Python automation:</strong> pytest (fixtures, parametrize, mocking, BDD/behave), Python scripting, automation framework design</li>
+<li><strong>UI automation:</strong> TypeScript (Playwright, POM, storageState), Selenium WebDriver</li>
+<li><strong>CI/CD &amp; Cloud:</strong> GitHub Actions, Jenkins, Docker, Kubernetes, AWS (EKS, S3, SNS, DynamoDB, ECR, Bedrock)</li>
+<li><strong>API &amp; architecture:</strong> REST, GraphQL, Postman, Contract Testing, Kafka, OAuth2/OIDC, Microservices</li>
+<li><strong>Observability:</strong> Prometheus, Grafana, Splunk, Allure, flakiness detection</li>
+<li><strong>Performance:</strong> Locust, JMeter, K6</li>
+<li><strong>Data:</strong> Pandas, NumPy, SQL, DynamoDB, MongoDB, Redis</li>
+<li><strong>Earlier automation:</strong> Java, TestNG, Selenium, RestAssured, Cucumber, Concourse CI</li>
+</ul>
+<h2>Education</h2>
+<p><strong>Bachelor of Technology (B.Tech)</strong> — West Bengal University of Technology, India (2014)</p>
+<h2>Certifications</h2>
+<ul>
+<li>ISTQB Foundation Level — ISTQB</li>
+<li>AI/LLM Testing, Prompt Engineering, and Evaluation — O&rsquo;Reilly Learning (2025–2026)</li>
+<li>LLM Evaluation and Observability — DeepLearning.AI (2026)</li>
+</ul></div>
+</body>
+</html>
